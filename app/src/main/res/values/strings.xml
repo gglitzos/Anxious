@@ -3,4 +3,11 @@
 
     // introduction to the application
     <string name="intro">Welcome to ANXIOUS, the only way to really relax your and understand yourself</string>
+    <string name="title_activity_useful_links">UsefulLinks</string>
+
+    // links
+    <string name="webLink"> Here are a list of Websites that can lead you to a happier tomorrow</string>
+
+
+
 </resources>
