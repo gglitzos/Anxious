@@ -7,7 +7,7 @@
 
     // links
     <string name="webLink"> Here are a list of Websites that can lead you to a happier tomorrow</string>
-
+    <string name="title_activity_google_poi">Map</string>
 
 
 </resources>

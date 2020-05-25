@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
+
+
 
     ImageButton link;
 
@@ -17,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         link = findViewById(R.id.ulink);
         link.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
                 openLinks();
             }
         });
+
+
     }
 
     public void openLinks(){
