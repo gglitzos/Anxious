@@ -23,6 +23,7 @@ public class Links extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_links);
 
+        //import buttons
         lifel = findViewById(R.id.lifel);
         lifel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +58,7 @@ public class Links extends AppCompatActivity {
 
     }
 
+    //links the image button to the desired web page
     private void openlifel() {
         Intent lifelintnet = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.lifeline.org.au/"));
         startActivity(lifelintnet);

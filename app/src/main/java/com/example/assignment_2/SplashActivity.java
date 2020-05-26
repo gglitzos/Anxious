@@ -8,7 +8,7 @@ import android.os.Handler;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private static int SPLASH_TIME_OUT = 4000;
+    private static int SPLASH_TIME_OUT = 3000; //time in milliseconds to "splash" onto the first screen before going to the main activity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,11 +17,10 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent splashIntent = new Intent (SplashActivity.this, MainActivity.class);
-                //Intent splashIntent = new Intent (MainActivity.this, SplashActivity.class);
+                Intent splashIntent = new Intent (SplashActivity.this, MainActivity.class); //SplashActivity will be before the MainActivity
                 startActivity(splashIntent);
                 finish();
             }
-        },SPLASH_TIME_OUT);
+        },SPLASH_TIME_OUT);//finish with 3 second timeout
     }
 }

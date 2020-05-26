@@ -33,33 +33,21 @@
         android:id="@+id/imageButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="48dp"
         android:background="@null"
         app:layout_constraintBottom_toTopOf="@+id/imageButton2"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/videob" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:layout_marginBottom="52dp"
-        android:background="@null"
-        app:layout_constraintBottom_toTopOf="@+id/ulink"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/diaryb" />
-
-    <ImageButton
         android:id="@+id/ulink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="48dp"
         android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,20 +59,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="124dp"
         android:layout_marginRight="124dp"
-        android:layout_marginBottom="88dp"
-        android:text="Usefull Links"
+        android:layout_marginBottom="72dp"
+        android:text="@string/links"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="156dp"
-        android:layout_marginRight="156dp"
-        android:layout_marginBottom="112dp"
-        android:text="Journal"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
@@ -93,9 +70,55 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="112dp"
         android:layout_marginRight="112dp"
-        android:layout_marginBottom="144dp"
+        android:layout_marginBottom="100dp"
         android:text="Helpful Videos"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="152dp"
+        android:layout_marginRight="152dp"
+        android:layout_marginBottom="100dp"
+        android:text="Journal"
+        app:layout_constraintBottom_toTopOf="@+id/map"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="48dp"
+        android:background="@null"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/diaryb" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="48dp"
+        android:background="@null"
+        app:layout_constraintBottom_toTopOf="@+id/ulink"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/map1" />
+
+    <TextView
+        android:id="@+id/map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="112dp"
+        android:layout_marginRight="112dp"
+        android:layout_marginBottom="100dp"
+        android:text="@string/map1"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent" />
 
 

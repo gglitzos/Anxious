@@ -4,10 +4,15 @@
     // introduction to the application
     <string name="intro">Welcome to ANXIOUS, the only way to really relax your and understand yourself</string>
     <string name="title_activity_useful_links">UsefulLinks</string>
+    <string name="links">Useful Links</string>
+    <string name="map1">Local Services</string>
 
     // links
     <string name="webLink"> Here are a list of Websites that can lead you to a happier tomorrow</string>
     <string name="title_activity_google_poi">Map</string>
+
+    //spash
+    <string name="splash1">Welcome to Anxious or Grounded, i really have not thought of the name yet.</string>
 
 
 </resources>
