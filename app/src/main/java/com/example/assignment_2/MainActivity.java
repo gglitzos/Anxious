@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     ImageButton link;
+    ImageButton diary;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +30,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        diary = findViewById(R.id.diary);
+        diary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDiary();
+            }
+        });
+
 
     }
 
     public void openLinks(){
         Intent intent = new Intent(this, Links.class);
         startActivity(intent);
+    }
 
+    public void openDiary(){
+        Intent intent = new Intent(this, JournalMain.class);
+        startActivity(intent);
     }
 }
