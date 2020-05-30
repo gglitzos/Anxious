@@ -1,20 +1,18 @@
 package com.example.assignment_2;
 
+
 import android.content.ContentValues;
 import android.content.Context;
-import android.icu.text.SimpleDateFormat;
-import android.icu.text.UFormat;
-import android.os.Build;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -25,37 +23,39 @@ public class JournalAdapter extends RecyclerView.Adapter<JournalAdapter.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView journal;
+        public TextView dot;
         public TextView timestamp;
 
         public MyViewHolder(View view) {
             super(view);
             journal = view.findViewById(R.id.journal);
+            dot = view.findViewById(R.id.dot);
             timestamp = view.findViewById(R.id.timestamp);
         }
     }
 
-    public JournalAdapter(Context context, List<Journal>journalList) {
+    public JournalAdapter(Context context, List<Journal> journalList) {
         this.context = context;
-        this.journalList = journalList;
+         this.journalList = journalList;
     }
 
-
-
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.journal_list_row, parent, false);
+
         return new MyViewHolder(itemView);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Journal journal = journalList.get(position);
 
         holder.journal.setText(journal.getJournal());
 
-        //formatting timestamp
+        //Displaying dot from HTML character code
+        holder.dot.setText(Html.fromHtml("&#8226;"));
+        //formatting and displaying timestamp
         holder.timestamp.setText(formatDate(journal.getTimestamp()));
 
     }
@@ -64,19 +64,19 @@ public class JournalAdapter extends RecyclerView.Adapter<JournalAdapter.MyViewHo
     public int getItemCount() {
         return journalList.size();
     }
+    /** Formtatting the timestamp to month and date mm dd*/
 
-    //timestamp will be date/month format
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    private String formatDate(String dareStr) {
+    private String formatDate(String dateStr) {
         try {
             SimpleDateFormat fmt = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");
-            Date date = fmt.parse(dareStr);
-            SimpleDateFormat fmtOut = new SimpleDateFormat("dd MM");
+            Date date = fmt.parse(dateStr);
+            SimpleDateFormat fmtOut = new SimpleDateFormat("MM d");
             return fmtOut.format(date);
-
         } catch (ParseException e) {
 
         }
         return "";
     }
+
+
 }

@@ -7,7 +7,6 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -18,19 +17,22 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class JournalMain extends AppCompatActivity {
+
     private JournalAdapter mAdapter;
     private List<Journal> journalList = new ArrayList<>();
     private CoordinatorLayout coordinatorLayout;
     private RecyclerView recyclerView;
-    private TextView noJournalView;
-
+    private TextView noJournalsView;
+    private FloatingActionButton fab;
     private DatabaseHelper db;
+
 
 
     @Override
@@ -40,13 +42,17 @@ public class JournalMain extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //coordinatorLayout = findViewById(R.id.coordinator_layout);
+        coordinatorLayout = findViewById(R.id.co_layout);
         recyclerView = findViewById(R.id.recycler_view);
-        noJournalView = findViewById(R.id.empty_journals_view);
+        noJournalsView = findViewById(R.id.empty_journal_view);
+
+
+
 
         db = new DatabaseHelper(this);
 
         journalList.addAll(db.getAllJournals());
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,9 +68,12 @@ public class JournalMain extends AppCompatActivity {
         recyclerView.addItemDecoration(new MyDividerItemDecoration(this, LinearLayoutManager.VERTICAL, 16));
         recyclerView.setAdapter(mAdapter);
 
-        toggleEmptyJournals();
+        toggleEmptyJournal();
 
-        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(this, recyclerView, new RecyclerTouchListener.ClickListener() {
+        //on press open the options to delete, edit and choose
+
+        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(this,
+                recyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
 
@@ -72,61 +81,49 @@ public class JournalMain extends AppCompatActivity {
 
             @Override
             public void onLongClick(View view, int position) {
-                showActionsDialog(position);
 
             }
         }));
     }
 
-    //to insert a new not in the database
-
+    //to insert the new journal into the database
     private void createJournal(String journal) {
-        //putting the new entry and receiving the id for the entry
         long id = db.insertJournal(journal);
 
         Journal j = db.getJournal(id);
 
         if (j != null) {
-            //adding the new journal to the array
-            journalList.add(0, j);
-
-            mAdapter.notifyDataSetChanged();
-            toggleEmptyJournals();
+            journalList.add(0, j); //adding the new journal to the database
+            mAdapter.notifyDataSetChanged(); //refresh the list
+            toggleEmptyJournal();
         }
     }
 
+    //updating the journal
     private void updateJournal(String journal, int position) {
         Journal j = journalList.get(position);
-        //updating the text
-        j.setJournals(journal);
-
-        ///update in database
-        db.updateJournal(j);
-
-        //refresh
-        journalList.set(position, j);
+        j.setJournal(journal); //updating the text
+        db.updateJournal((j));
+        journalList.set(position, j); //updating the list
         mAdapter.notifyItemChanged(position);
 
-        toggleEmptyJournals();
+        toggleEmptyJournal();
     }
 
     private void deleteJournal(int position) {
-        //delete entry from db
         db.deleteJournal(journalList.get(position));
-
-        //remove the entry
+        //removing the note from the list
         journalList.remove(position);
         mAdapter.notifyItemRemoved(position);
 
-        toggleEmptyJournals();
-
+        toggleEmptyJournal();
     }
 
-    private void showActionsDialog(final int position) {
-        CharSequence colors[] = new CharSequence[]{"Edit", "Delete"};
 
+   private void showActionsDialog(final int position) {
+        CharSequence colors[] = new CharSequence[]{"EDIT", "DELETE"};
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Choose option");
+        builder.setTitle("Choose Option");
         builder.setItems(colors, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -135,10 +132,14 @@ public class JournalMain extends AppCompatActivity {
                 } else {
                     deleteJournal(position);
                 }
+
             }
         });
         builder.show();
     }
+
+    //Shows the alert dialog box to allow you to edit the text and enter the journal entry
+
     private void showJournalDialog(final boolean shouldUpdate, final Journal journal, final int position) {
         LayoutInflater layoutInflaterAndroid = LayoutInflater.from(getApplicationContext());
         View view = layoutInflaterAndroid.inflate(R.layout.journal_dialog, null);
@@ -157,15 +158,9 @@ public class JournalMain extends AppCompatActivity {
                 .setCancelable(false)
                 .setPositiveButton(shouldUpdate ? "update" : "save", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogBox, int id) {
-
+                        dialogBox.cancel();
                     }
-                })
-                .setNegativeButton("cancel",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialogBox, int id) {
-                                dialogBox.cancel();
-                            }
-                        });
+                });
 
         final AlertDialog alertDialog = alertDialogBuilderUserInput.create();
         alertDialog.show();
@@ -173,36 +168,41 @@ public class JournalMain extends AppCompatActivity {
         alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Show toast message when no text is entered
-                if (TextUtils.isEmpty(inputJournal.getText().toString())) {
-                    Toast.makeText(JournalMain.this, "Enter note!", Toast.LENGTH_SHORT).show();
+                //show toast when nothing is entered
+                if(TextUtils.isEmpty(inputJournal.getText().toString())) {
+                    Toast.makeText(JournalMain.this, "Enter Journal", Toast.LENGTH_SHORT).show();
                     return;
                 } else {
                     alertDialog.dismiss();
                 }
 
-                // check if user updating note
-                if (shouldUpdate && journal != null) {
-                    // update note by it's id
+                //check if the user is updating the journal
+                if(shouldUpdate && journal != null) {
                     updateJournal(inputJournal.getText().toString(), position);
                 } else {
-                    // create new note
+                    //create the new journal entry
                     createJournal(inputJournal.getText().toString());
                 }
             }
         });
     }
 
-    private void toggleEmptyJournals() {
-        // you can check notesList.size() > 0
-
+    private void toggleEmptyJournal() {
         if (db.getJournalsCount() > 0) {
-            noJournalView.setVisibility(View.GONE);
+            noJournalsView.setVisibility(View.GONE);
         } else {
-            noJournalView.setVisibility(View.VISIBLE);
+            noJournalsView.setVisibility(View.VISIBLE);
         }
     }
+
 }
+
+
+
+
+
+
+
 
 
 

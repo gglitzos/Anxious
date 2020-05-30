@@ -14,10 +14,10 @@
     //Primary has been added
     //Primary Dark has been added
     //Accent has been added
-    <color name="msg_no_notes">#999</color>
-    <color name="hint_enter_notes">#89c3c3c3</color>
+    <color name="msg_no_journals">#999</color>
+    <color name="hint_enter_journals">#89c3c3c3</color>
     <color name="timestamp">#858585</color>
-    <color name="note_list_text">#232323</color>
+    <color name="journals_list_text">#232323</color>
 
 
 </resources>

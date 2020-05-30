@@ -2,15 +2,15 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="activity_margin">16dp</dimen>
     <dimen name="dot_margin_right">16dp</dimen>
-    <dimen name="msg_no_notes">16dp</dimen>
-    <dimen name="margin_top_no_notes">16dp</dimen>
+    <dimen name="msg_no_journals">16dp</dimen>
+    <dimen name="margin_top_no_journals">16dp</dimen>
     <dimen name="lbl_new_note_title">16dp</dimen>
     <dimen name="dimen_10">16dp</dimen>
-    <dimen name="input_new_note">16dp</dimen>
+    <dimen name="input_new_journal">16dp</dimen>
     <dimen name="dot_height">16dp</dimen>
     <dimen name="dot_text_size">16dp</dimen>
     <dimen name="timestamp">16dp</dimen>
-    <dimen name="note_list_text">16dp</dimen>
+    <dimen name="journal_list_text">16dp</dimen>
 
 
 

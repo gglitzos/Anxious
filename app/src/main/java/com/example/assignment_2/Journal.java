@@ -10,15 +10,16 @@ public class Journal {
     private String journal;
     private String timestamp;
 
-
-    //creating the sql table
-    public static final String CREATE_TABLE = "CREATE_TABLE" + TABLE_NAME + "("
-            + COLUMN_ID + "INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + COLUMN_JOURNAL + "TEXT,"
+    //Creating the SQL query
+    public static final String CREATE_TABLE =
+            "CREATE TABLE" + TABLE_NAME + "("
+            + COLUMN_ID + "INTEGER PRIMARY AUTOINCREMENT,"
+            + COLUMN_JOURNAL + " TEXT,"
             + COLUMN_TIMESTAMP + "DATETIME DEFAULT CURRENT_TIMESTAMP"
             + ")";
 
     public Journal() {
+
     }
 
     public Journal(int id, String journal, String timestamp) {
@@ -35,20 +36,20 @@ public class Journal {
         return journal;
     }
 
-    public void setJournals(String journal) {
+    public void setJournal(String journal) {
         this.journal = journal;
-    }
-
-    public String getTimestamp() {
-        return timestamp;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public void setTimestamp(String timestamp) {
+    public void setTimestamp(String string) {
         this.timestamp = timestamp;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
     }
 
 
