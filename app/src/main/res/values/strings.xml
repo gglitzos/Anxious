@@ -16,10 +16,10 @@
 
     //Journal
     <string name="action_settings">Settings</string>
-    <string name="activity_title_home">Notes</string>
-    <string name="msg_no_journal">No Notes Found</string>
-    <string name="lbl_new_journal_title">New Notes</string>
-    <string name="lbl_edit_journal_title">Edit Note</string>
-    <string name="hint_enter_journal">Enter Your Note</string>
+    <string name="activity_title_home">Journal</string>
+    <string name="msg_no_journal">No Entries Found</string>
+    <string name="lbl_new_journal_title">New Entry</string>
+    <string name="lbl_edit_journal_title">Edit Journal</string>
+    <string name="hint_enter_journal">Enter Your Journal</string>
 
 </resources>

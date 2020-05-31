@@ -12,10 +12,10 @@ public class Journal {
 
     //Creating the SQL query
     public static final String CREATE_TABLE =
-            "CREATE TABLE" + TABLE_NAME + "("
-            + COLUMN_ID + "INTEGER PRIMARY AUTOINCREMENT,"
+            " CREATE TABLE " + TABLE_NAME + "("
+            + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + COLUMN_JOURNAL + " TEXT,"
-            + COLUMN_TIMESTAMP + "DATETIME DEFAULT CURRENT_TIMESTAMP"
+            + COLUMN_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP "
             + ")";
 
     public Journal() {

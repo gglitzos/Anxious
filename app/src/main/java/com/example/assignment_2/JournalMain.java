@@ -81,6 +81,7 @@ public class JournalMain extends AppCompatActivity {
 
             @Override
             public void onLongClick(View view, int position) {
+                showActionsDialog(position);
 
             }
         }));
@@ -147,7 +148,7 @@ public class JournalMain extends AppCompatActivity {
         AlertDialog.Builder alertDialogBuilderUserInput = new AlertDialog.Builder(JournalMain.this);
         alertDialogBuilderUserInput.setView(view);
 
-        final EditText inputJournal = view.findViewById(R.id.journal);
+        final EditText inputJournal = view.findViewById(R.id.note);
         TextView dialogTitle = view.findViewById(R.id.dialog_title);
         dialogTitle.setText(!shouldUpdate ? getString(R.string.lbl_new_journal_title) : getString(R.string.lbl_edit_journal_title));
 
@@ -166,10 +167,10 @@ public class JournalMain extends AppCompatActivity {
         alertDialog.show();
 
         alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                //show toast when nothing is entered
-                if(TextUtils.isEmpty(inputJournal.getText().toString())) {
+                if(TextUtils.isEmpty(inputJournal.getText().toString())) {  //show toast when nothing is entered
                     Toast.makeText(JournalMain.this, "Enter Journal", Toast.LENGTH_SHORT).show();
                     return;
                 } else {

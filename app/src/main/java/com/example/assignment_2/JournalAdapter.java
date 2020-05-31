@@ -53,11 +53,11 @@ public class JournalAdapter extends RecyclerView.Adapter<JournalAdapter.MyViewHo
 
         holder.journal.setText(journal.getJournal());
 
-        //Displaying dot from HTML character code
-        holder.dot.setText(Html.fromHtml("&#8226;"));
-        //formatting and displaying timestamp
-        holder.timestamp.setText(formatDate(journal.getTimestamp()));
+        // Displaying dot from HTML character code
+        //holder.dot.setText(Html.fromHtml("&#8226;"));
 
+        // Formatting and displaying timestamp
+        //holder.timestamp.setText(formatDate(journal.getTimestamp()));
     }
 
     @Override
@@ -66,15 +66,16 @@ public class JournalAdapter extends RecyclerView.Adapter<JournalAdapter.MyViewHo
     }
     /** Formtatting the timestamp to month and date mm dd*/
 
-    private String formatDate(String dateStr) {
+    private String formatDate(String dateString) {
         try {
-            SimpleDateFormat fmt = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");
-            Date date = fmt.parse(dateStr);
-            SimpleDateFormat fmtOut = new SimpleDateFormat("MM d");
+            SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date date = fmt.parse(dateString);
+            SimpleDateFormat fmtOut = new SimpleDateFormat("dd-MM-yyyy");
             return fmtOut.format(date);
         } catch (ParseException e) {
 
         }
+
         return "";
     }
 
