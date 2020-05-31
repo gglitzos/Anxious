@@ -2,15 +2,18 @@ package com.example.assignment_2;
 
 public class YouTubeVideos {
 
-    String ytUrl;
+    String videoUrl;
 
     public YouTubeVideos() {
 
     }
 
-    public YouTubeVideos(String ytUrl) { this.ytUrl = ytUrl; }
+    public YouTubeVideos(String videoUrl) {
+        this.videoUrl = videoUrl; }
 
-    public String getVideoUrl() { return ytUrl; }
+    public String getVideoUrl() {
+        return videoUrl; }
 
-    public void setYtUrl (String ytUrl) { this.ytUrl = ytUrl; }
+    public void setVideoUrl (String videoUrl) {
+        this.videoUrl = videoUrl; }
 }

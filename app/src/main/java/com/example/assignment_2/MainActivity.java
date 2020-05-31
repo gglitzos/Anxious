@@ -15,12 +15,20 @@ public class MainActivity extends AppCompatActivity {
 
     ImageButton link;
     ImageButton diary;
+    ImageButton youtubebtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        youtubebtn = findViewById(R.id.youtubebtn);
+        youtubebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openYouTubeMain();
+            }
+        });
 
         link = findViewById(R.id.ulink);
         link.setOnClickListener(new View.OnClickListener() {
@@ -37,9 +45,8 @@ public class MainActivity extends AppCompatActivity {
                 openDiary();
             }
         });
-
-
     }
+
 
     public void openLinks(){
         Intent intent = new Intent(this, Links.class);
@@ -48,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void openDiary(){
         Intent intent = new Intent(this, JournalMain.class);
+        startActivity(intent);
+    }
+
+    public void openYouTubeMain() {
+        Intent intent = new Intent( this, YouTubeMain.class);
         startActivity(intent);
     }
 }

@@ -19,7 +19,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".YouTubeMain"></activity>
+
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,6 +30,17 @@
         <activity android:name=".Links" />
         <activity android:name=".MainActivity" />
         <activity android:name=".JournalMain" />
+        <activity android:name=".YouTubeMain">
+            <intent-filter>
+                <action android:name="android.intent.action.YouTubeVideos"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+
+            </intent-filter>
+
+
+        </activity>
+
+
     </application>
 
 </manifest>
