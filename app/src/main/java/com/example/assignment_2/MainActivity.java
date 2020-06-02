@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton link;
     ImageButton diary;
     ImageButton youtubebtn;
+    ImageButton mapsbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,16 @@ public class MainActivity extends AppCompatActivity {
                 openDiary();
             }
         });
+
+        mapsbtn = findViewById(R.id.mapsbtn);
+        mapsbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMapsActivity();
+            }
+        });
+
+
     }
 
 
@@ -60,6 +71,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void openYouTubeMain() {
         Intent intent = new Intent( this, YouTubeMain.class);
+        startActivity(intent);
+    }
+
+    public void openMapsActivity() {
+        Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
     }
 }

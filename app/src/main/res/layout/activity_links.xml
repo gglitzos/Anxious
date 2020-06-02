@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundColour"
+    android:background="@drawable/background_app"
     tools:context=".Links">
 
 
@@ -20,30 +20,37 @@
         android:gravity="center_horizontal"
         android:text="@string/webLink"
         android:textAlignment="center"
+        android:textColor="@color/mainText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ImageButton
         android:id="@+id/ata"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="55dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="56dp"
         app:layout_constraintBottom_toTopOf="@+id/bdi"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ata" />
-
 
     <ImageButton
         android:id="@+id/bdi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="55dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="52dp"
         android:background="@null"
         app:layout_constraintBottom_toTopOf="@+id/bblue"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/bdi" />
 
@@ -51,10 +58,13 @@
         android:id="@+id/bblue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="55dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="52dp"
         android:background="@null"
         app:layout_constraintBottom_toTopOf="@+id/lifel"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/beyondb" />
 
@@ -62,14 +72,15 @@
         android:id="@+id/lifel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="70dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="72dp"
         android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/lifel" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

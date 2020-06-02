@@ -21,5 +21,16 @@
     <string name="lbl_new_journal_title">New Entry</string>
     <string name="lbl_edit_journal_title">Edit Journal</string>
     <string name="hint_enter_journal">Enter Your Journal</string>
+    <string name="title_activity_maps">Map</string>
+
+
+    //maps
+    <string name="normal_map">Normal Map</string>
+    <string name="hybrid_map">Hybrid Map</string>
+    <string name="satellite_map">Satellite Map</string>
+    <string name="terrain_map">Terrain Map</string>
+    <string name="map_key" translatable="false">AIzaSyACI9NrSBrQ8hWsvZRDSr1or-QV5XE6plc</string>
+
+
 
 </resources>
