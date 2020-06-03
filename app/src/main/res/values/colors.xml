@@ -19,5 +19,8 @@
     <color name="timestamp">#858585</color>
     <color name="journals_list_text">#232323</color>
 
+    //temp text colour
+    <color name="tempColour">#FAFAFA</color>
+
 
 </resources>

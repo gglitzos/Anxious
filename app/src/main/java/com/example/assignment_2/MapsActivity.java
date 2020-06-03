@@ -121,7 +121,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 return super.onOptionsItemSelected(item);
         }
     }
-
+/*
     //implement long click functionality
 
     private void setMapLongClick(final GoogleMap map) {
@@ -157,7 +157,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                             {Manifest.permission.ACCESS_FINE_LOCATION},
                     99);
         }
-    }
+    }*/
 
     //for thr pop up
     @Override
@@ -176,6 +176,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 break;
         }
     }
+
+
 
 
 

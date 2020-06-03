@@ -8,6 +8,18 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="76dp"
+        android:text="@string/journal1"
+        android:textColor="@color/tempColour"
+        app:layout_constraintBottom_toTopOf="@+id/map"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,94 +42,86 @@
         app:layout_constraintVertical_bias="0.031" />
 
     <ImageButton
-        android:id="@+id/youtubebtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginBottom="48dp"
-        android:background="@null"
-        app:layout_constraintBottom_toTopOf="@+id/diary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/videob" />
-
-    <ImageButton
         android:id="@+id/ulink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginBottom="48dp"
-        android:background="@null"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="180dp"
+        android:background="?android:selectableItemBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/links" />
+        app:srcCompat="@drawable/help" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="124dp"
-        android:layout_marginRight="124dp"
-        android:layout_marginBottom="72dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="216dp"
         android:text="@string/links"
+        android:textColor="@color/tempColour"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/textView3"
+    <ImageButton
+        android:id="@+id/youtubebtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="112dp"
-        android:layout_marginRight="112dp"
-        android:layout_marginBottom="100dp"
-        android:text="Helpful Videos"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="152dp"
-        android:layout_marginRight="152dp"
-        android:layout_marginBottom="100dp"
-        android:text="Journal"
-        app:layout_constraintBottom_toTopOf="@+id/map"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="?android:selectableItemBackground"
+        app:layout_constraintBottom_toTopOf="@+id/diary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/video" />
 
     <ImageButton
         android:id="@+id/diary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginBottom="48dp"
-        android:background="@null"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="?android:selectableItemBackground"
         app:layout_constraintBottom_toTopOf="@+id/mapsbtn"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/diaryb" />
+        app:srcCompat="@drawable/book" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="68dp"
+        android:text="@string/videos"
+        android:textColor="@color/tempColour"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageButton
         android:id="@+id/mapsbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="20dp"
         android:background="@null"
         app:layout_constraintBottom_toTopOf="@+id/ulink"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/map1" />
+        app:srcCompat="@drawable/maps" />
 
     <TextView
         android:id="@+id/map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="112dp"
-        android:layout_marginRight="112dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="72dp"
         android:text="@string/map1"
+        android:textColor="@color/tempColour"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent" />
 

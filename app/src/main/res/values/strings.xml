@@ -2,10 +2,12 @@
     <string name="app_name">ANXIOUS!</string>
 
     // introduction to the application
-    <string name="intro">Welcome to ANXIOUS, the only way to really relax your and understand yourself</string>
+    <string name="intro">Welcome to  GROUNDED, the SELF HELP GUIDE</string>
     <string name="title_activity_useful_links">UsefulLinks</string>
     <string name="links">Useful Links</string>
     <string name="map1">Local Services</string>
+    <string name="videos">Helpful Videos</string>
+    <string name="journal1">Journals</string>
 
     // links
     <string name="webLink"> Here are a list of Websites that can lead you to a happier tomorrow</string>
