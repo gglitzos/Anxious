@@ -5,22 +5,50 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private static int SPLASH_TIME_OUT = 3000; //time in milliseconds to "splash" onto the first screen before going to the main activity
+    private final int SPLASH_DELAY = 2500; //time in milliseconds to "splash" onto the first screen before going to the main activity
+
+    //Widgets for splash
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent splashIntent = new Intent (SplashActivity.this, MainActivity.class); //SplashActivity will be before the MainActivity
-                startActivity(splashIntent);
-                finish();
-            }
-        },SPLASH_TIME_OUT);//finish with 3 second timeout
+
+        getWindow().setBackgroundDrawable(null);
+
+        //call method
+        initializeView();
+        animateLogo();
+        goToMainActivity();
+
     }
+
+    private void initializeView() {
+        imageView = findViewById(R.id.imageView);
+    }
+
+    private void animateLogo() {
+        //this method is used to animate the logo
+        Animation fadingInAnimation = AnimationUtils.loadAnimation(this,R.anim.fade_in);
+        fadingInAnimation.setDuration(SPLASH_DELAY);
+
+        imageView.startAnimation(fadingInAnimation);
+    }
+
+    private void goToMainActivity() {
+        // this till take the user to the main activity after the splash screen
+        new Handler().postDelayed(()-> {
+            startActivity(new Intent(SplashActivity.this, MainActivity.class));
+            finish();
+        }, SPLASH_DELAY);
+
+        }
+
 }

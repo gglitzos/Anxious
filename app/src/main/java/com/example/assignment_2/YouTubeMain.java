@@ -25,11 +25,11 @@ public class YouTubeMain extends AppCompatActivity {
         recyclerView.setLayoutManager( new LinearLayoutManager(this));
 
         //linked videos to youtube
-        youTubeVideos.add( new YouTubeVideos("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/EYQsRBNYdPk\" frameborder=\"0\" allowfullscreen></iframe>") );
-        youTubeVideos.add( new YouTubeVideos("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/F28MGLlpP90\" frameborder=\"0\" allowfullscreen></iframe>") );
-        youTubeVideos.add( new YouTubeVideos("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/odADwWzHR24\" frameborder=\"0\" allowfullscreen></iframe>") );
-        youTubeVideos.add( new YouTubeVideos("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/75PUjUsGsQQ\" frameborder=\"0\" allowfullscreen></iframe>") );
-        youTubeVideos.add( new YouTubeVideos("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/pHQKmaJmSMg\" frameborder=\"0\" allowfullscreen></iframe>") );
+        youTubeVideos.add( new YouTubeVideos("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/EpVFSti0Ydg\" frameborder=\"0\" allowfullscreen></iframe>") );
+        youTubeVideos.add( new YouTubeVideos("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/x0nZ1ZLephQ\" frameborder=\"0\" allowfullscreen></iframe>") );
+        youTubeVideos.add( new YouTubeVideos("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/q3ZjCW8UT5g\" frameborder=\"0\" allowfullscreen></iframe>") );
+        youTubeVideos.add( new YouTubeVideos("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/ZebSXPUCPFc\" frameborder=\"0\" allowfullscreen></iframe>") );
+        youTubeVideos.add( new YouTubeVideos("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/HqSoxMOrVeE\" frameborder=\"0\" allowfullscreen></iframe>") );
 
         YTAdapter ytAdapter = new YTAdapter(youTubeVideos);
 
