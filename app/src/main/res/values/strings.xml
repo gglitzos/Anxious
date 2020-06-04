@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ANXIOUS!</string>
+    <string name="app_name">GROUNDED!</string>
 
     // introduction to the application
     <string name="intro">Welcome to  GROUNDED, the SELF HELP GUIDE</string>
@@ -13,7 +13,7 @@
     <string name="webLink"> Here are a list of Websites that can lead you to a happier tomorrow</string>
     <string name="title_activity_google_poi">Map</string>
 
-    //spash
+    //splash
     <string name="splash1">Welcome to Anxious or Grounded, i really have not thought of the name yet.</string>
 
     //Journal
